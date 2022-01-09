@@ -61,7 +61,7 @@ static int __init CharDevice_init(void)
 
     my_cdev = cdev_alloc(); //allocte memory to char device structure
     my_cdev->ops = &fops;   //link our file operatons to char device
-   // cdev_init(my_cdev,&fops);
+   // cdev_init(&my_cdev,&fops);
 
     result = cdev_add(my_cdev,DevNum,1);
      if(result<0)
